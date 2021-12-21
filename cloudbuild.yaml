@@ -9,7 +9,6 @@ steps:
       - 'NEXT_PUBLIC_CONFIG=$_CONFIG'
     args:
       [
-        'env',
         'deploy',
         '--project=$_FIREBASE_PROJECT_ID',
         '--only=functions',
