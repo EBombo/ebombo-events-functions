@@ -5,12 +5,14 @@ steps:
 
   - id: "deploy firebase"
     name: 'gcr.io/$PROJECT_ID/firebase'
+    env:
+      - 'NEXT_PUBLIC_CONFIG=$_CONFIG'
     args:
       [
+        'env',
         'deploy',
         '--project=$_FIREBASE_PROJECT_ID',
         '--only=functions',
-        '--build-arg=NEXT_PUBLIC_CONFIG=$_CONFIG',
       ]
 
   # Build the container image
