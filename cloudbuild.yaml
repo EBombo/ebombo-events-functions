@@ -10,8 +10,10 @@ steps:
     args:
       [
         'deploy',
-        '--project=$_FIREBASE_PROJECT_ID',
-        '--only=functions',
+        '--project',
+        '$_FIREBASE_PROJECT_ID',
+        '--only',
+        'functions',
       ]
 
   # Build the container image
