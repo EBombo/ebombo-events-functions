@@ -1,6 +1,9 @@
 const admin = require("firebase-admin");
 const url = require("url");
 
+console.log(process.env.FIREBASE_TOKEN);
+console.log(process.env.NEXT_PUBLIC_CONFIG);
+
 const config = JSON.parse(process.env.NEXT_PUBLIC_CONFIG);
 
 process.env.NODE_ENV === "production"
