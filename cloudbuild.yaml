@@ -6,7 +6,7 @@ steps:
   - id: "deploy firebase"
     name: 'gcr.io/$PROJECT_ID/firebase'
     env:
-      - 'CONFIG=$_CONFIG'
+      - 'NEXT_PUBLIC_CONFIG=$_CONFIG'
       - 'FIREBASE_TOKEN=$_FIREBASE_TOKEN'
     args:
       [
