@@ -16,9 +16,10 @@ jobs:
         run: npm install
 
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: anargu/firebase-action@master
         with:
-          args: functions:config:set ${{ secrets.NEXT_PUBLIC_CONFIG }} ; firebase deploy --only functions
+          args: deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          ENV_JSON_STRING_CONFIG: ${{ secrets.NEXT_PUBLIC_CONFIG }}
 
