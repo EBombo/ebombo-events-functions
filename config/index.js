@@ -1,7 +1,7 @@
 const admin = require("firebase-admin");
 const url = require("url");
 
-const config = JSON.parse(process.env.NEXT_PUBLIC_CONFIG ?? '');
+const config = JSON.parse(process.env.NEXT_PUBLIC_CONFIG ?? process.env._CONFIG ?? '');
 
 process.env.NODE_ENV === "production"
   ? admin.initializeApp()
