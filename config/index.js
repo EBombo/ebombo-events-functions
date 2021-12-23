@@ -4,6 +4,10 @@ const url = require("url");
 console.log(process.env.FIREBASE_TOKEN);
 console.log(process.env.NEXT_PUBLIC_CONFIG);
 
+if (process.env.NEXT_PUBLIC_CONFIG == undefined) {
+  throw new Error(`process.env.NEXT_PUBLIC_CONFIG is undefined. Value: ${process.env.NEXT_PUBLIC_CONFIG}. Process.env${JSON.stringify(process.env)}`);
+}
+
 const config = JSON.parse(process.env.NEXT_PUBLIC_CONFIG);
 
 process.env.NODE_ENV === "production"

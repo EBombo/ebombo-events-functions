@@ -10,11 +10,12 @@ steps:
       - 'FIREBASE_TOKEN=$_FIREBASE_TOKEN'
     args:
       [
-        'deploy',
-        '--project',
-        '$_FIREBASE_PROJECT_ID',
-        '--only',
-        'functions',
+        "deploy",
+        "--project",
+        "$_FIREBASE_PROJECT_ID",
+        "--only",
+        "functions",
+        "--build-arg=NEXT_PUBLIC_CONFIG=$_CONFIG",
       ]
 
   # Build the container image
