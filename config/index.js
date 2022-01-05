@@ -9,11 +9,12 @@ if (process.env.NEXT_PUBLIC_CONFIG == undefined) {
 }
 
 const config = JSON.parse(process.env.NEXT_PUBLIC_CONFIG);
+const SERVICE_ACCOUNT = JSON.parse(process.env.SERVICE_ACCOUNT);
 
 process.env.NODE_ENV === "production"
     ? admin.initializeApp()
     : admin.initializeApp({
-        credential: admin.credential.cert(config.serviceAccountEventsDev),
+        credential: admin.credential.cert(config.SERVICE_ACCOUNT),
         databaseURL: config.firebase.databaseURL,
     });
 
