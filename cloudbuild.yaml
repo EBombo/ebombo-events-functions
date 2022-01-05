@@ -1,18 +1,21 @@
 steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    env:
+      - 'NEXT_PUBLIC_CONFIG=$_CONFIG'
+      - 'FIREBASE_TOKEN=$_FIREBASE_TOKEN'
     args:
-    - "gcloud"
-    - "functions"
-    - "deploy"
-    - "registerCompanyOnCreateCustomer"
-    - "--project"
-    - "ebombo-events"
-    - "--region=us-central1"
-    - "--source=."
-    - "--trigger-http"
-    - "--runtime=nodejs14"
-    - "--set-env-vars"
-    - "NEXT_PUBLIC_CONFIG=${_CONFIG}"
+      - "gcloud"
+      - "functions"
+      - "deploy"
+      - "registerCompanyOnCreateCustomer"
+      - "--project"
+      - "ebombo-events"
+      - "--region=us-central1"
+      - "--source=."
+      - "--trigger-http"
+      - "--runtime=nodejs14"
+      - "--set-env-vars"
+      - "NEXT_PUBLIC_CONFIG=${NEXT_PUBLIC_CONFIG}"
 
 #steps:
 #  - id: 'npm install'
