@@ -1,18 +1,18 @@
 steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     args:
-    - gcloud
-    - functions
-    - deploy
-    - registerCompanyOnCreateCustomer
-    - --project
-    - ebombo-events
-    - --region=us-central1
-    - --source=.
-    - --trigger-http
-    - --runtime=nodejs14
-    - --set-env-vars
-    - NEXT_PUBLIC_CONFIG=$_CONFIG
+    - "gcloud"
+    - "functions"
+    - "deploy"
+    - "registerCompanyOnCreateCustomer"
+    - "--project"
+    - "ebombo-events"
+    - "--region=us-central1"
+    - "--source=."
+    - "--trigger-http"
+    - "--runtime=nodejs14"
+    - "--set-env-vars"
+    - "NEXT_PUBLIC_CONFIG=$_CONFIG"
 
 #steps:
 #  - id: 'npm install'
