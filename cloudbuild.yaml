@@ -1,16 +1,18 @@
 steps:
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  - id: 'npm install'
+    name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+
+  - id: "deploy firebase"
+    name: 'gcr.io/$PROJECT_ID/firebase'
     args:
-      - "gcloud"
-      - "functions"
-      - "deploy"
-      - "registerCompanyOnCreateCustomer"
-      - "--project"
-      - "${_FIREBASE_PROJECT_ID}"
-      - "--region=us-central1"
-      - "--source=."
-      - "--trigger-http"
-      - "--runtime=nodejs14"
+      [
+          "deploy",
+          "--project",
+          "$_FIREBASE_PROJECT_ID",
+          "--only",
+          "functions",
+      ]
 
 options:
   logging: CLOUD_LOGGING_ONLY
