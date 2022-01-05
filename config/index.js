@@ -22,6 +22,5 @@ module.exports = {
     firestore,
     hostname,
     auth,
-    config,
     version,
 };
