@@ -15,7 +15,7 @@ steps:
       - "--trigger-http"
       - "--runtime=nodejs14"
       - "--set-env-vars"
-      - "NEXT_PUBLIC_CONFIG=${NEXT_PUBLIC_CONFIG}"
+      - "NEXT_PUBLIC_CONFIG=${_CONFIG}"
 
 #steps:
 #  - id: 'npm install'
