@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { firestore } = require("./config");
 const functions = require("firebase-functions");
 
