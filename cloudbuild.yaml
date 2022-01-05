@@ -5,13 +5,15 @@ steps:
         "functions",
         "deploy",
         "registerCompanyOnCreateCustomer",
+        "--project",
+        "ebombo-events",
         "--region=us-central1",
         "--source=.",
         "--trigger-http",
         "--runtime=nodejs14",
-        "--set-env-vars",
-        'NEXT_PUBLIC_CONFIG="test"]',
     ]
+#    "--set-env-vars",
+#    'NEXT_PUBLIC_CONFIG="test"]',
 
 #steps:
 #  - id: 'npm install'
