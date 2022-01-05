@@ -6,7 +6,7 @@ steps:
       - "deploy"
       - "registerCompanyOnCreateCustomer"
       - "--project"
-      - "ebombo-events"
+      - "${_FIREBASE_PROJECT_ID}"
       - "--region=us-central1"
       - "--source=."
       - "--trigger-http"
