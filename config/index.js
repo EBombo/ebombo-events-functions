@@ -1,23 +1,7 @@
 const admin = require("firebase-admin");
 const url = require("url");
 
-console.log("FIREBASE_TOKEN", process.env.FIREBASE_TOKEN);
-console.log("NEXT_PUBLIC_CONFIG", process.env.NEXT_PUBLIC_CONFIG);
-
-if (process.env.NEXT_PUBLIC_CONFIG == undefined) {
-    throw new Error(`process.env.NEXT_PUBLIC_CONFIG is undefined. Value: ${process.env.NEXT_PUBLIC_CONFIG}. Process.env${JSON.stringify(process.env)}`);
-}
-
-const config = JSON.parse(process.env.NEXT_PUBLIC_CONFIG);
-const SERVICE_ACCOUNT = JSON.parse(process.env.SERVICE_ACCOUNT);
-
-process.env.NODE_ENV === "production"
-    ? admin.initializeApp()
-    : admin.initializeApp({
-        credential: admin.credential.cert(config.SERVICE_ACCOUNT),
-        databaseURL: config.firebase.databaseURL,
-    });
-
+admin.initializeApp();
 const adminFirestore = admin.firestore;
 const firestore = admin.firestore();
 const auth = admin.auth();

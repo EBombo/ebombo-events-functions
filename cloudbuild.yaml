@@ -1,8 +1,5 @@
 steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    env:
-      - 'NEXT_PUBLIC_CONFIG=$_CONFIG'
-      - 'FIREBASE_TOKEN=$_FIREBASE_TOKEN'
     args:
       - "gcloud"
       - "functions"
@@ -14,8 +11,6 @@ steps:
       - "--source=."
       - "--trigger-http"
       - "--runtime=nodejs14"
-      - "--set-env-vars"
-      - "NEXT_PUBLIC_CONFIG=${_CONFIG},SERVICE_ACCOUNT=${_SERVICE_ACCOUNT}"
 
 #steps:
 #  - id: 'npm install'
